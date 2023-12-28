@@ -1,0 +1,96 @@
+modeltype: rota
+
+data:
+  num_workers: 80
+  height: 128
+  batch_size: 80
+  path: "data/sun360_example"
+  pairs_file: "data/sun360_example.npy"
+
+models:
+  overlap_classification:
+    encoder:
+      type: models.base.resunet_encoder
+      block: 1 # 0 basic, 1 bottleneck
+      num_blocks: 3-3-3
+      not_concat: True
+      num_out_layers: 32
+    classifier:
+      type: models.base.rotation_cv_net
+      block: 1 # 0 basic, 1 bottleneck
+      num_blocks: 1-1
+      zdim: 512
+      in_planes: 1024
+      width: 32
+      height: 32
+      out_rotation_mode: 'overlap_class'
+  nonoverlap_rotation_regression_model:
+    overlap_type: non-overlap
+    encoder:
+      type: models.base.resunet_encoder
+      block: 1 # 0 basic, 1 bottleneck
+      num_blocks: 3-3-3
+      not_concat: True
+      num_out_layers: 32
+    rotationnet:
+      type: models.base.rotation_cv_net
+      block: 1 # 0 basic, 1 bottleneck
+      num_blocks: 1-1
+      zdim: 512
+      in_planes: 1024
+      width: 32
+      height: 32
+      out_rotation_mode: 'distribution'
+    rotationnet_y:
+      type: models.base.rotation_cv_net
+      block: 1 # 0 basic, 1 bottleneck
+      num_blocks: 1-1
+      zdim: 512
+      in_planes: 1024
+      width: 32
+      height: 32
+      out_rotation_mode: 'distribution'
+    rotationnet_z:
+      type: models.base.rotation_cv_net
+      block: 1 # 0 basic, 1 bottleneck
+      num_blocks: 1-1
+      zdim: 512
+      in_planes: 1024
+      width: 32
+      height: 32
+      out_rotation_mode: 'distribution'
+  overlap_rotation_regression_model:
+    overlap_type: overlap
+    encoder:
+      type: models.base.resunet_encoder
+      block: 1 # 0 basic, 1 bottleneck
+      num_blocks: 3-3-3
+      not_concat: True
+      num_out_layers: 32
+    rotationnet:
+      type: models.base.rotation_cv_net
+      block: 1 # 0 basic, 1 bottleneck
+      num_blocks: 1-1
+      zdim: 512
+      in_planes: 1024
+      width: 32
+      height: 32
+      out_rotation_mode: 'distribution'
+    rotationnet_y:
+      type: models.base.rotation_cv_net
+      block: 1 # 0 basic, 1 bottleneck
+      num_blocks: 1-1
+      zdim: 512
+      in_planes: 1024
+      width: 32
+      height: 32
+      out_rotation_mode: 'distribution'
+    rotationnet_z:
+      type: models.base.rotation_cv_net
+      block: 1 # 0 basic, 1 bottleneck
+      num_blocks: 1-1
+      zdim: 512
+      in_planes: 1024
+      width: 32
+      height: 32
+      out_rotation_mode: 'distribution'
