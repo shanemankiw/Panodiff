@@ -20,7 +20,7 @@ conda activate pano
 
 ## Download Pretrained Models
 
-The pretrained ckpts could be found in this OneDrive [Link](https://sjtueducn-my.sharepoint.com/:u:/g/personal/shanemankiw_sjtu_edu_cn/EWCaUyWKFv5NgIKydmITZeEBziCCfW4TdiMWr1tgY78TBQ):
+The pretrained ckpts could be found in this OneDrive [Link](https://tamucs-my.sharepoint.com/:u:/g/personal/jionghao_tamu_edu/Eab8PmPlexdIntvYemT3LMMBxWdQyi7G6GmTztIboH8nSA?e=2oo1xC):
 
 Please put pretrained_models/ under the main folder. It should be of this file structure:
 
