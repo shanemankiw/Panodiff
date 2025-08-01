@@ -6,13 +6,13 @@ This directory contains the code for predicting the relative rotation between a 
 
 ## Pretrained Models
 
-Download the pretrained checkpoints for relative rotation prediction modules from [link](https://sjtueducn-my.sharepoint.com/:u:/g/personal/shanemankiw_sjtu_edu_cn/EWCaUyWKFv5NgIKydmITZeEBziCCfW4TdiMWr1tgY78TBQ), and unzip the files into the `ckpts` directory.
+Download the pretrained checkpoints for relative rotation prediction modules from [link](https://tamucs-my.sharepoint.com/:f:/g/personal/jionghao_tamu_edu/Ej97YbpaLWJNlzakRm0d-n0B4KQ7K8nhBsArJiFhSb22eQ?e=j08sbU), and unzip the files into the `ckpts` directory.
 
 ## Data Preparation
 
 **Toy Example:**
 
-1. Download the preprocessed small batch test data of SUN360 from [link](https://sjtueducn-my.sharepoint.com/:u:/g/personal/shanemankiw_sjtu_edu_cn/EWCaUyWKFv5NgIKydmITZeEBziCCfW4TdiMWr1tgY78TBQ), and unzip it into `data/sun360_example`
+1. Download the preprocessed small batch test data of SUN360 from [link](https://tamucs-my.sharepoint.com/:u:/g/personal/jionghao_tamu_edu/EZLQ--ayZMtKrrKZRUqiCjYBrKkgagE82usXH_cATwYfig?e=fCkFNC), and unzip it into `data/sun360_example`
 2. `cd data` and run the following command to generate metadata. The file `sun360_example.npy` will be generated under `data`
 
 ``` shell
